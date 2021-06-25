@@ -13,7 +13,12 @@ const handleSubmit = (e) => {
     body: JSON.stringify(formDataObject),
   })
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then(({ success, message }) => {
+      const text = success
+        ? "Dziękujemy za wysłanie wiadomości!"
+        : "Niestety nie udało się wysłać wiadomości. Spróbuj ponownie lub skontaktuj się za administratorem strony: a.tomzik@gmail.com";
+      openModal(text);
+    })
     .catch((error) => console.log(error));
 };
 

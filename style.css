@@ -8,6 +8,7 @@
   --firstColor: rgb(0, 13, 255);
   --secondColor: rgb(107, 115, 255);
   --gray: #343a40;
+  --grayTransparent: rgba(52, 58, 64, 0.7);
   --lightGray: #fafaff;
   --shadow: 6px 6px 20px rgba(0, 0, 0, 0.05);
 }
@@ -609,6 +610,49 @@ footer {
   footer {
     padding: 2rem;
   }
+}
+.modal__back {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--grayTransparent);
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.modal__back.active {
+  display: flex;
+}
+.modal__front {
+  background-image: linear-gradient(
+    135deg,
+    rgb(107, 115, 255) 10%,
+    rgb(0, 13, 255) 100%
+  );
+  min-height: 15rem;
+  min-width: 15rem;
+  flex: 0 0 40vmin;
+  height: 40vmin;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__btn {
+  background-color: transparent;
+  border: none;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.2rem 0.5rem;
+  position: absolute;
+  color: white;
+}
+.modal__text {
+  text-align: center;
+  padding: 0.6rem;
 }
 
 @media only screen and (max-width: 560px) {
